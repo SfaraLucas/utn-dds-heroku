@@ -1,0 +1,8 @@
+<h1 class="title">Seleccione una Sociedad</h1>
+<div class="grid-container">
+  <div (click)="goToSoc()" *ngFor="let card of cardsArray" [ngClass]="['grid-slot', 'mat-elevation-z4',  rowsToClass(card), colorToClass(card)]">
+    <span class="text-first-row">{{card.title}}</span>
+    <span class="text-second-row"> {{card.content}}</span>
+    <span class="text-third-row">{{card.footer}}</span>
+  </div>
+</div>

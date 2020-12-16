@@ -1,0 +1,70 @@
+.grid {
+  &-container {
+    display: grid;
+    grid-gap: 1.1vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 8.2vw;
+  }
+
+  &-slot {
+    border-radius: 0.42vw;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.three-rows {
+  grid-template-rows: 1fr 1.4vw 1fr;
+}
+
+.two-rows {
+  grid-template-rows: 4.6vw 1.4vw 1.4vw;
+}
+
+.card {
+  &-green {
+    background-color: #e2eee6;
+    color: #06541e;
+  }
+
+  &-blue {
+    background-color: #e6eaf2;
+    color: #253c70;
+  }
+
+  &-red {
+    background-color: #f9e2f3;
+    color: #b90882;
+  }
+}
+
+.text {
+  &-first-row {
+    font-size: 1.1vw;
+    padding-bottom: 0.55vw;
+    align-self: end;
+  }
+
+  &-second-row {
+    font-size: 1.39vw;
+  }
+
+  &-third-row {
+    font-size: 0.97vw;
+    padding-top: 0.55vw;
+    align-self: start;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  margin-bottom: 2vw;
+  display: grid;
+  justify-items: center;
+}

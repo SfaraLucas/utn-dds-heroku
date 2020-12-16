@@ -1,0 +1,33 @@
+<div style="margin: 20px 0;">
+  <h3>Ingresos Registrados</h3>
+  <table mat-table
+         [dataSource]="dataSource3" multiTemplateDataRows
+         class="mat-elevation-z8">
+    <ng-container matColumnDef="{{column2}}" *ngFor="let column2 of columnsToDisplay">
+      <th mat-header-cell *matHeaderCellDef> {{column2}} </th>
+      <td mat-cell *matCellDef="let element2"> {{element2[column2]}} </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element2" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element2 == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-description">
+            <app-multi-card *ngFor="let sale of element2.buysAssociated" [firstRow]="'Fecha: ' + theBuys[sale-1].date" [secondRow]="'Medio de Pago: ' + theBuys[sale-1].payment" [thirdRow]="'Precio: ' + (theBuys[sale-1].amount).toString()"></app-multi-card>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+</div>
+
+

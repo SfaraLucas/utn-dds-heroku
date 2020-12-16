@@ -1,0 +1,11 @@
+<div style="display: grid;">
+  <div style="display: inline-flex; margin: 10px 0;" *ngFor="let mail of messages">
+    <mat-card>
+      <mat-card-content style="display: grid;">
+        <span>{{mail.date}}</span>
+        <span *ngIf="mail.checked">{{mail.message}}</span>
+      </mat-card-content>
+    </mat-card>
+    <span *ngIf="!mail.checked" (click)="hideContent(mail)" style="padding: 30px 0 0 20px; cursor: pointer">Hace Click para Leer el Mensaje</span>
+  </div>
+</div>

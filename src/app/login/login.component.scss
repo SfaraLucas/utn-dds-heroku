@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  padding: 7vw 12.5vw;
+  width: 18vw;
+  -webkit-box-shadow: 6px 6px 13px 3px rgba(125,125,125,1);
+  -moz-box-shadow: 6px 6px 13px 3px rgba(125,125,125,1);
+  box-shadow: 6px 6px 13px 3px rgba(125,125,125,1);
+  background-color: #e8cbea;
+  margin: 8vw 0 8vw 18vw;
+}
+
+.center {
+  justify-self: center;
+}
+
+.style {
+  font-family: Roboto, sans-serif;
+  color: #673ab7;
+}
+
+::ng-deep .mat-form-field-flex {
+  background-color: white !important;
+}
+
+.error {
+  background-color: red;
+}

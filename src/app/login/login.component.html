@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="center style">GeSoc</h1>
+  <div class="center">
+    <mat-form-field appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input [(ngModel)]="user" matInput>
+    </mat-form-field>
+  </div>
+  <div class="center">
+  <mat-form-field appearance="fill">
+    <mat-label>Ingrese su contraseña</mat-label>
+    <input [(ngModel)]="password" matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" [ngClass]="{'error': error}" (click)="navigate()">Entrar</button>
+</div>
